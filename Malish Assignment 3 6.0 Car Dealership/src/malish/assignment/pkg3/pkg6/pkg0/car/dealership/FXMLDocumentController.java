@@ -30,7 +30,6 @@ public class FXMLDocumentController implements Initializable {
     private Label label;
 
     // use of ObservableList for easy showing in FXML
-    @FXML
     private final ObservableList<Vehicle> vehicles = FXCollections.observableArrayList();
 
     @FXML
@@ -152,6 +151,7 @@ public class FXMLDocumentController implements Initializable {
         carRemoveSelect.setCellFactory(cellfactory);
     }
 
+    @FXML
     public void carUpdate(ActionEvent event) {
         // read all attributes from the input components
         String maker = carMakeInput.getSelectionModel().getSelectedItem();
@@ -159,21 +159,13 @@ public class FXMLDocumentController implements Initializable {
         Color color = Color.RED;
         int doors = Integer.parseInt(carDoorsInput.getSelectionModel().getSelectedItem());
         int passengers = Integer.parseInt(carCapacityInput.getSelectionModel().getSelectedItem());
-        double purchase = Double.parseDouble(carPricePurchasedInput.getText());
-
+        String text = carPricePurchasedInput.getText();
+        double purchase = text.isEmpty() ? 0.0 : Double.parseDouble(text);
+       
         // create new car and add it to the list       
-        carUpdateInput.setOnAction(e -> {
-        
-        
-            
+       
         vehicles.add(new Car(maker, model, color, purchase));
-        for(int i = 0; i < vehicles.length-1; i++){
-        Car tempCar = vehicles[i];
-        carRemoveSelect.getItems().addAll(tempCar.getMake + " " + tempCar.getModel);}
-        
-        });
-        
-        
+
         // reset the input components
         carMakeInput.getSelectionModel().selectFirst();
         carModelInput.getSelectionModel().selectFirst();
@@ -182,6 +174,7 @@ public class FXMLDocumentController implements Initializable {
         carPricePurchasedInput.setText("");
     }
 
+    @FXML
     public void retrieveVehicle(ActionEvent event) {
         // check if anything is selected
         if (carRemoveSelect.getSelectionModel().getSelectedIndex() != -1) {

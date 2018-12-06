@@ -50,7 +50,7 @@
       </Label>
       <TextField fx:id="carPricePurchasedInput" layoutX="306.0" layoutY="218.0" prefHeight="25.0" prefWidth="101.0" promptText="Price Purchased " />
       <TextField fx:id="askingPriceInput" layoutX="684.0" layoutY="401.0" prefHeight="25.0" prefWidth="119.0" promptText="Asking Price" />
-      <Button fx:id="carUpdateInput" layoutX="179.0" layoutY="255.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Submit Update" />
+      <Button fx:id="carUpdateInput" layoutX="179.0" layoutY="255.0" mnemonicParsing="false" onAction="#carUpdate" prefHeight="25.0" prefWidth="101.0" text="Submit Update" />
       <Label layoutX="82.0" layoutY="54.0" text="Color:" />
       <ComboBox fx:id="carColorInput" layoutX="306.0" layoutY="174.0" prefHeight="25.0" prefWidth="101.0" promptText="Color" />
       <ComboBox fx:id="carRemoveSelect" layoutX="448.0" layoutY="363.0" prefHeight="25.0" prefWidth="373.0" promptText="Select the Car that has been Sold" />
@@ -65,7 +65,7 @@
       <Label fx:id="colorDisplay" layoutX="123.0" layoutY="54.0" text="Label" />
       <Label fx:id="pricePurchasedDisplay" layoutX="177.0" layoutY="95.0" text="Label" />
       <Label fx:id="commissionDisplay" layoutX="450.0" layoutY="95.0" text="Label" />
-      <Button fx:id="viewSelectedCar" layoutX="460.0" layoutY="401.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="155.0" text="VIEW SELECTED!" />
+      <Button fx:id="viewSelectedCar" layoutX="460.0" layoutY="401.0" mnemonicParsing="false" onAction="#retrieveVehicle" prefHeight="25.0" prefWidth="155.0" text="VIEW SELECTED!" />
       <Label layoutX="84.0" layoutY="25.0" text="Make:" />
       <Label layoutX="193.0" layoutY="25.0" text="Model:" />
       <Label fx:id="makeDisplay" layoutX="127.0" layoutY="25.0" text="Label" />
